@@ -1,0 +1,42 @@
+export const BRAND_NAME = "Brand";
+export const config = {
+  brand: BRAND_NAME,
+  orderPrefix: BRAND_NAME.toUpperCase(),
+  contact: { email: "hello@example.com", whatsapp: "", location: "Made with love in Pakistan" },
+  paymentAccounts: {
+    bank: {
+      name: "Demo account — do not transfer",
+      account: "0000 0000 0000 0000",
+      bank: "Bank transfer",
+    },
+    easypaisa: {
+      name: "Demo account — do not transfer",
+      account: "0300 0000000",
+      bank: "Easypaisa",
+    },
+    jazzcash: { name: "Demo account — do not transfer", account: "0300 0000000", bank: "JazzCash" },
+    sadapay: { name: "Demo account — do not transfer", account: "0300 0000000", bank: "SadaPay" },
+  },
+  endpoints: {
+    sharedInvitation: "/wp-json/invitations/v1/invitations/:slug",
+    siteContent: "/wp-json/invitations/v1/site-content",
+    designs: "/wp-json/invitations/v1/designs",
+    tiers: "/wp-json/invitations/v1/tiers",
+    creditPacks: "/wp-json/invitations/v1/credit-packs",
+    orders: "/wp-json/invitations/v1/orders",
+    draft: "/wp-json/invitations/v1/orders/:id/draft",
+    orderByKey: "/wp-json/invitations/v1/orders/:id?key=:key",
+    submitOrder: "/wp-json/invitations/v1/orders/:id/submit",
+    preview: "/wp-json/invitations/v1/orders/:id/preview",
+    slug: "/wp-json/invitations/v1/slug-availability",
+    credits: "/wp-json/invitations/v1/credits",
+    downloads: "/wp-json/invitations/v1/orders/:id/downloads",
+    links: "/wp-json/invitations/v1/orders/:id/link",
+    rsvp: "/wp-json/invitations/v1/orders/:id/rsvp",
+    printQuote: "/wp-json/invitations/v1/print/quote",
+    printOrder: "/wp-json/invitations/v1/print/orders",
+    printTrack: "/wp-json/invitations/v1/print/orders/:id",
+    checkout: "/wp-json/wc/store/v1/checkout",
+    cart: "/wp-json/wc/store/v1/cart/add-item",
+  },
+};

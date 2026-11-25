@@ -28,3 +28,11 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application rules
+- Keep TanStack Start and its file router for the hosted app; the platform requires this runtime rather than React Router.
+- Keep application data behind typed mock services and endpoint config; this preserves a replaceable WordPress/WooCommerce boundary without a built-in backend.
+- Browser storage is permitted only inside the mock service adapter for demo drafts and credits; production persistence must replace that adapter.
+- Keep marketing copy in the bilingual typed site-content object and interface labels in locale JSON; this supports later ACF content editing.
+- Keep all visual styles and semantic colour tokens in the global design system; this preserves consistent rebranding and RTL layout.
+- Treat mock purchases, uploads, printing and generation as demonstrations and label them; do not imply payment or fulfillment occurred.

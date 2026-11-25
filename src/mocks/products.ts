@@ -1,0 +1,173 @@
+import d1 from "@/assets/design-1.webp.asset.json";
+import d2 from "@/assets/design-2.webp.asset.json";
+import d3 from "@/assets/design-3.webp.asset.json";
+import d4 from "@/assets/design-4.webp.asset.json";
+import d5 from "@/assets/design-5.webp.asset.json";
+import d6 from "@/assets/design-6.webp.asset.json";
+import d7 from "@/assets/design-7.webp.asset.json";
+import d8 from "@/assets/design-8.webp.asset.json";
+import type { Design, Tier, CreditPack, OrderDetails } from "@/services/types";
+export const designs: Design[] = [
+  {
+    id: "chinar",
+    name: "The Peacock Garden",
+    event: "Wedding",
+    style: "Royal & Traditional",
+    image: d1.url,
+    price: 2900,
+    regularPrice: 4500,
+    description:
+      "An ornate Mughal arch, delicate jasmine and timeless peacock details. A little royal, a lot of you.",
+    tag: "Bestseller",
+  },
+  {
+    id: "gul",
+    name: "Gul — In Full Bloom",
+    event: "Wedding",
+    style: "Floral",
+    image: d2.url,
+    price: 2900,
+    regularPrice: 4500,
+    description:
+      "Watercolour roses and flowing calligraphy for your beautifully romantic beginning.",
+    tag: "New",
+  },
+  {
+    id: "rang",
+    name: "Rang — A Little Joy",
+    event: "Mehndi",
+    style: "Royal & Traditional",
+    image: d3.url,
+    price: 2900,
+    regularPrice: 4500,
+    description: "Marigolds, colour and a little magic. Made for a mehndi to remember.",
+  },
+  {
+    id: "noor",
+    name: "Noor — Simply Yours",
+    event: "Nikah",
+    style: "Minimal",
+    image: d4.url,
+    price: 1900,
+    regularPrice: 3000,
+    description: "Thoughtful typography, soft ivory and delicate botanicals. Quietly beautiful.",
+    tag: "Popular",
+  },
+  {
+    id: "bagh",
+    name: "The Shalimar Edit",
+    event: "Walima",
+    style: "Royal & Traditional",
+    image: d5.url,
+    price: 2900,
+    regularPrice: 4500,
+    description: "A blue garden inspired by Lahore’s timeless architecture.",
+  },
+  {
+    id: "olive",
+    name: "Olive & Ever After",
+    event: "Engagement",
+    style: "Floral",
+    image: d6.url,
+    price: 1900,
+    regularPrice: 3000,
+    description: "Soft sage leaves and a celebration of new beginnings.",
+  },
+  {
+    id: "confetti",
+    name: "A Little Celebration",
+    event: "Birthday",
+    style: "Contemporary",
+    image: d7.url,
+    price: 1900,
+    regularPrice: 3000,
+    description: "Playful blossoms, happy colours and your favourite people.",
+  },
+  {
+    id: "moon",
+    name: "Under the Crescent",
+    event: "Aqiqah",
+    style: "Royal & Traditional",
+    image: d8.url,
+    price: 2900,
+    regularPrice: 4500,
+    description: "A starry emerald celebration for your little blessing.",
+  },
+];
+export const tiers: Tier[] = [
+  {
+    id: "essential",
+    name: "Essential",
+    description: "A beautiful beginning, without the extras.",
+    price: 1900,
+    regularPrice: 3000,
+    features: [
+      "Your chosen invitation design",
+      "High-resolution PNG & JPG",
+      "Share on WhatsApp",
+      "English or Urdu wording",
+      "Free watermarked preview",
+    ],
+  },
+  {
+    id: "complete",
+    name: "Complete",
+    description: "Your whole celebration, beautifully connected.",
+    price: 4900,
+    regularPrice: 7500,
+    features: [
+      "Everything in Essential",
+      "Your own online invitation link",
+      "RSVP & guest management",
+      "Multiple events & venue maps",
+      "Background music & countdown",
+      "Print-ready PDF",
+    ],
+    popular: true,
+  },
+  {
+    id: "cinematic",
+    name: "Cinematic",
+    description: "An invitation that feels like a little film.",
+    price: 8900,
+    regularPrice: 12500,
+    features: [
+      "Everything in Complete",
+      "Animated video invitation",
+      "Personalised opening scene",
+      "Premium music selection",
+      "Priority preview generation",
+      "Print-ready invitation suite",
+    ],
+  },
+];
+export const creditPacks: CreditPack[] = [
+  { id: "small", credits: 5, price: 990, label: "A little something" },
+  { id: "medium", credits: 15, price: 2490, label: "Most loved" },
+  { id: "large", credits: 40, price: 5990, label: "Best value" },
+];
+export const emptyDetails: OrderDetails = {
+  host: "",
+  partner: "",
+  family: "",
+  wording: "Together with our families",
+  city: "",
+  slug: "",
+  customAddress: false,
+  bismillah: true,
+  verse: false,
+  dua: "",
+  events: [{ name: "Nikah", date: "", time: "", venue: "", address: "", map: "", dressCode: "" }],
+  rsvp: true,
+  travel: "",
+  registry: "",
+  faq: "",
+  gallery: false,
+  welcome: "",
+  notes: "",
+  music: "None",
+  photoName: "",
+  paymentPlan: "full",
+  method: "bank",
+  receiptName: "",
+};
