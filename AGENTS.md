@@ -30,6 +30,7 @@ use the editor.
 <!-- LOVABLE:END -->
 
 ## Application rules
+- Apply device appearance with CSS prefers-color-scheme and global semantic tokens; this avoids theme flashes and storage dependencies across hosted and WordPress views.
 - Keep TanStack Start and its file router for the hosted app; the platform requires this runtime rather than React Router.
 - Keep application data behind typed mock services and endpoint config; this preserves a replaceable WordPress/WooCommerce boundary without a built-in backend.
 - Browser storage is permitted only inside the mock service adapter for demo drafts and credits; production persistence must replace that adapter.

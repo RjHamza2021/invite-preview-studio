@@ -1,4 +1,5 @@
 # Invitation platform
+- [x] Follow device light/dark appearance and enlarge typography across all pages.
 - [x] Add image-rich mega menus and refine the homepage navigation and collection presentation.
 - [x] Define rebrandable design system, mock content and typed service boundary.
 - [x] Build anchored homepage, eight designs and immersive demo.
