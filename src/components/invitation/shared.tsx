@@ -21,6 +21,7 @@ import { buyCredits } from "@/services/api";
 import type { Design } from "@/services/types";
 import video from "@/assets/invitation-intro.mp4.asset.json";
 import { toast } from "sonner";
+import { ThemeSwitch } from "./theme-switch";
 export const money = (value: number) => `Rs. ${value.toLocaleString("en-PK")}`;
 export function Logo() {
   return (
@@ -36,6 +37,8 @@ export function Logo() {
 export function LanguageToggle() {
   const { language, setLanguage } = useLanguage();
   return (
+    <>
+    <ThemeSwitch />
     <Button
       variant="ghost"
       size="sm"
@@ -46,6 +49,7 @@ export function LanguageToggle() {
       <Globe2 />
       <span>{language === "en" ? "اردو" : "EN"}</span>
     </Button>
+    </>
   );
 }
 export function SectionHeading({

@@ -1,4 +1,5 @@
 # Invitation platform
+- [x] Add a visible appearance selector with saved Light, Dark and Device preferences.
 - [x] Follow device light/dark appearance and enlarge typography across all pages.
 - [x] Add image-rich mega menus and refine the homepage navigation and collection presentation.
 - [x] Define rebrandable design system, mock content and typed service boundary.

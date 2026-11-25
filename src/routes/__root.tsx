@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { SiteProvider } from "@/i18n/provider";
 import { Toaster } from "@/components/ui/sonner";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { ThemeProvider } from "@/components/invitation/theme-switch";
 
 function NotFoundComponent() {
   return (
@@ -138,8 +139,10 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <SiteProvider>
+        <ThemeProvider>
         <Outlet />
         <Toaster />
+        </ThemeProvider>
       </SiteProvider>
     </QueryClientProvider>
   );

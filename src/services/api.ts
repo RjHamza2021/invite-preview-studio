@@ -4,6 +4,22 @@ import { designs, tiers, creditPacks, emptyDetails } from "@/mocks/products";
 import type { Order, ExportFormat, Rsvp } from "./types";
 const delay = (ms = 180) => new Promise<void>((resolve) => setTimeout(resolve, ms));
 const key = "invitation-demo-v1";
+export type ThemePreference = "system" | "light" | "dark";
+export function getThemePreference(): ThemePreference {
+  try {
+    const value = localStorage.getItem("invitation-appearance");
+    return value === "light" || value === "dark" ? value : "system";
+  } catch {
+    return "system";
+  }
+}
+export function saveThemePreference(value: ThemePreference) {
+  try {
+    localStorage.setItem("invitation-appearance", value);
+  } catch {
+    // Appearance still works for this visit when browser storage is disabled.
+  }
+}
 type Store = {
   orders: Order[];
   credits: number;

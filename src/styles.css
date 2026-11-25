@@ -308,7 +308,7 @@ h1 { font-size:4.4375rem; color:var(--primary); line-height:1.06; margin-block:2
 @media(prefers-reduced-motion:reduce) { .mega-panel { animation:none; }.mega-art img,.mega-tier-image img { transition:none; } }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
     color-scheme: dark;
     --background: oklch(0.19 0.012 200);
     --foreground: oklch(0.94 0.012 85);
@@ -348,6 +348,47 @@ h1 { font-size:4.4375rem; color:var(--primary); line-height:1.06; margin-block:2
     --sidebar-border: var(--border);
     --sidebar-ring: var(--ring);
   }
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --background: oklch(0.19 0.012 200);
+    --foreground: oklch(0.94 0.012 85);
+    --card: oklch(0.235 0.016 200);
+    --card-foreground: var(--foreground);
+    --popover: var(--card);
+    --popover-foreground: var(--foreground);
+    --primary: oklch(0.78 0.085 195);
+    --primary-foreground: oklch(0.19 0.018 200);
+    --secondary: oklch(0.8 0.13 75);
+    --secondary-foreground: var(--primary-foreground);
+    --muted: oklch(0.255 0.016 200);
+    --muted-foreground: oklch(0.76 0.016 195);
+    --accent: oklch(0.3 0.036 195);
+    --accent-foreground: var(--primary);
+    --destructive: oklch(0.75 0.15 25);
+    --destructive-foreground: var(--primary-foreground);
+    --border: oklch(0.36 0.019 200);
+    --input: oklch(0.43 0.022 200);
+    --ring: var(--primary);
+    --rose: oklch(0.76 0.13 17);
+    --success: oklch(0.75 0.11 160);
+    --paper-rose: oklch(0.29 0.035 20);
+    --paper-teal: oklch(0.285 0.03 185);
+    --paper-yellow: oklch(0.31 0.035 85);
+    --paper-blue: oklch(0.285 0.024 220);
+    --shadow-soft: 0 8px 32px color-mix(in oklab, var(--phone-ink) 35%, transparent);
+    --shadow-phone: 0 24px 54px color-mix(in oklab, var(--phone-ink) 65%, transparent);
+    --shadow-mega: 0 24px 40px -16px color-mix(in oklab, var(--phone-ink) 65%, transparent);
+    --shadow-art: 0 12px 20px -8px color-mix(in oklab, var(--phone-ink) 50%, transparent);
+    --sidebar: var(--card);
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--accent);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
 }
 
 /* Readability safeguards for larger text and device appearance. */
@@ -400,3 +441,7 @@ h1 { font-size:4.4375rem; color:var(--primary); line-height:1.06; margin-block:2
   .mega-design>div { margin-top:0; align-items:center; }
   .mega-tier-image { height:180px; }
 }
+
+.theme-switch { width:34px; height:36px; flex-shrink:0; color:var(--foreground); }
+.theme-switch svg { width:18px; height:18px; }
+@media(max-width:420px) { .enhanced-header .header-cta { font-size:0.75rem; padding-inline:7px; } .enhanced-header .wordmark>span { font-size:1.75rem; } .enhanced-header .header-inner { gap:5px; } .order-header .secure-label { display:none; } }
