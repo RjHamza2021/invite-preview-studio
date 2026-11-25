@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { SiteHeader } from "@/components/invitation/site-header";
 import { Link } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { motion, useReducedMotion } from "framer-motion";
@@ -114,7 +115,6 @@ export function HomePage() {
   const [demo, setDemo] = useState<Design | null>(null);
   const [credits, setCredits] = useState(false);
   const [active, setActive] = useState("");
-  const [mobileNav, setMobileNav] = useState(false);
   const [review, setReview] = useState(0);
   const [printStyle, setPrintStyle] = useState("flat");
   const [quantity, setQuantity] = useState(50);
@@ -143,52 +143,23 @@ export function HomePage() {
   return (
     <>
       <FaqSchema items={c.faq.items} />
-      <header className="site-header">
-        <div className="header-inner">
-          <Logo />
-          <nav aria-label="Main navigation" className={mobileNav ? "main-nav is-open" : "main-nav"}>
-            {c.nav.map((n) => (
-              <a
-                key={n.id}
-                href={`#${n.id}`}
-                className={active === n.id ? "active" : ""}
-                onClick={() => setMobileNav(false)}
-              >
-                {n.label}
-              </a>
-            ))}
-          </nav>
-          <div className="header-actions">
-            <LanguageToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              className="account-icon"
-              asChild
-              title={t("account")}
-            >
-              <Link to="/account" aria-label={t("account")}>
-                <Users />
-              </Link>
-            </Button>
-            <Button asChild className="header-cta">
-              <Link to="/order" search={{ design: "chinar" }}>
-                {t("start")}
-                <ArrowUpRight />
-              </Link>
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="mobile-menu"
-              aria-label="Open navigation"
-              onClick={() => setMobileNav(!mobileNav)}
-            >
-              <Menu />
-            </Button>
-          </div>
-        </div>
-      </header>
+      <SiteHeader
+        active={active}
+        onDemo={setDemo}
+        onPrint={setPrintStyle}
+        onOccasion={(occasion) => {
+          setEvent(occasion);
+          setStyle("All");
+          setAll(true);
+          document
+            .getElementById("designs")
+            ?.scrollIntoView({
+              behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                ? "instant"
+                : "smooth",
+            });
+        }}
+      />
       <main>
         <section className="hero-section">
           <img

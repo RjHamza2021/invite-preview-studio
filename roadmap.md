@@ -1,4 +1,5 @@
 # Invitation platform
+- [x] Add image-rich mega menus and refine the homepage navigation and collection presentation.
 - [x] Define rebrandable design system, mock content and typed service boundary.
 - [x] Build anchored homepage, eight designs and immersive demo.
 - [x] Build resumable order wizard, preview studio and customer account.

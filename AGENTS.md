@@ -36,3 +36,4 @@ use the editor.
 - Keep marketing copy in the bilingual typed site-content object and interface labels in locale JSON; this supports later ACF content editing.
 - Keep all visual styles and semantic colour tokens in the global design system; this preserves consistent rebranding and RTL layout.
 - Treat mock purchases, uploads, printing and generation as demonstrations and label them; do not imply payment or fulfillment occurred.
+- Keep homepage image-menu disclosures in the shared SiteHeader and pass selection callbacks to the homepage; this keeps catalogue filtering and print selection in their existing presentation state.
